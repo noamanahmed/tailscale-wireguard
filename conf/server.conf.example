@@ -1,0 +1,8 @@
+[Interface]
+Address = 10.0.0.1/24          # Server internal IP
+ListenPort = 51820             # Port WireGuard listens on
+PrivateKey = SBEu2GIeLIXcTCBCpukk/6SwNThTxDe3HkA4omaSxmU=  # Replace with your actual server private key
+
+[Peer]
+PublicKey = c1J6MBGGRFq+2cdFTj5sVo5mBVCAQIIw1rKKTk0etHI=  # Replace with your actual client public key
+AllowedIPs = 10.0.0.2/32       # Client's internal IP

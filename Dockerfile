@@ -10,7 +10,7 @@ RUN mkdir -p /etc/wireguard
 
 # Expose necessary ports (change as per your setup)
 EXPOSE 41641/udp
-EXPOSE 51820/udp
+EXPOSE 41820/udp
 
 # Copy entrypoint script
 COPY entrypoint.sh /usr/local/bin/entrypoint.sh

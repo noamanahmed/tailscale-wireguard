@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  tailscale:
+    image: tailscale-client
+    build: .
+    container_name: tailscale-client
+    cap_add:
+      - NET_ADMIN
+    privileged: true
+    volumes:
+      - ./conf/server.conf:/etc/wireguard/wg0.conf
+    sysctls:
+      - net.ipv4.ip_forward=1
+    ports:
+      - "51820:51820/udp"
+    environment:
+      - TAILSCALE_AUTH_KEY=${TAILSCALE_AUTH_KEY}
+      - TAILSCALE_HOSTNAME=${TAILSCALE_HOSTNAME}
+    restart: unless-stopped
